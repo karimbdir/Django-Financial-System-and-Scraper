@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <form method="post">{% csrf_token %}
+                <input class="form-control" name="product">
+                <button class="btn btn-primary" type="submit">Scrape Alibaba Products</button>
+            </form>
+
+        </div>
+    </div>
+
+{% endblock %}

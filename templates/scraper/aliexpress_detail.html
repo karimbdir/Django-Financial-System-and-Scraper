@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+
+            <ul>
+                <li> Product Information</li>
+                <li> ---------------------- </li>
+                <li> ID: {{ object.product_id }}</li>
+                <li> Title: {{ object.title }}</li>
+                <li> Price: TND {{ object.price }}</li>
+                <li> Unit: {{ object.unit }}</li>
+                <li> Product Ratings</li>
+                <li> ---------------------- </li>
+                <li> Product Search: {{ object.product_search }}</li>
+                <li> Rating: {{ object.rating }}</li>
+                <li> Supplier Information</li>
+                <li> ---------------------- </li>
+                <li> Supplier Name: {{ object.supplier_name }}</li>
+                <li> Supplier Link: <a href="https:{{ object.supplier_link }}" target="_blank">Link</a></li>
+            </ul>
+        
+            <a href="{% url 'scraper:aliexpress_delete' object.pk %}">Delete</a>
+        </div>
+    </div>
+
+{% endblock %}

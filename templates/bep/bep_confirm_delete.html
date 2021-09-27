@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1> {{ delete_what }} {{ object.pk }} </h1>
+            
+            <form method="post"> {% csrf_token %}
+                <p> Sure you want to delete? "{{ object }}" ? </p>
+                <input type="submit" value="Delete">
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

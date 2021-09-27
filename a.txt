@@ -1,0 +1,80 @@
+asgiref==3.3.1
+Django==3.1.4
+gunicorn==20.0.4
+pytz==2020.5
+sqlparse==0.4.1
+Django==3.1.4
+django-bootstrap-form==3.4
+django-bulma==0.8.2
+django-celery==3.3.1
+django-celery-beat==2.2.1
+django-cors-headers==3.7.0
+django-crispy-forms==1.11.2
+django-environ==0.4.5
+django-extensions==3.1.3
+django-filter==2.4.0
+django-heroku==0.3.1
+django-import-export==2.5.0
+django-mongoengine==0.4.6
+django-phone-field==1.8.1
+django-plotly-dash==1.6.3
+django-rest-framework-mongoengine==3.4.1
+django-rest-framework-nested==0.0.1
+django-shortcuts==1.6
+django-templated-mail==1.1.1
+django-timezone-field==4.2.1
+djangorestframework==3.12.4
+djangorestframework-simplejwt==4.6.0
+wkhtmltopdf==0.2
+
+
+import requests
+
+url = "https://ali-express1.p.rapidapi.com/search"
+
+querystring = {"query":"watch","page":"20"}
+
+headers = {
+    'x-rapidapi-host': "ali-express1.p.rapidapi.com",
+    'x-rapidapi-key': "803d39c5e8msh97ac08f087bae70p140b3ajsn5a1ec3b28c0a"
+    }
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
+
+
+
+
+import http.client
+
+conn = http.client.HTTPSConnection("ali-express1.p.rapidapi.com")
+
+headers = {
+    'x-rapidapi-host': "ali-express1.p.rapidapi.com",
+    'x-rapidapi-key': "803d39c5e8msh97ac08f087bae70p140b3ajsn5a1ec3b28c0a"
+    }
+
+conn.request("GET", "/search?query=watch&page=20", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
+
+
+import http.client
+
+conn = http.client.HTTPSConnection("ali-express1.p.rapidapi.com")
+
+headers = {
+    'x-rapidapi-host': "ali-express1.p.rapidapi.com",
+    'x-rapidapi-key': "803d39c5e8msh97ac08f087bae70p140b3ajsn5a1ec3b28c0a"
+    }
+
+conn.request("GET", "/search?query=watch&page=20", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
